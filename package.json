@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "promethium.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FabianTerhorst/Promethium.git"
@@ -15,5 +12,10 @@
   "bugs": {
     "url": "https://github.com/FabianTerhorst/Promethium/issues"
   },
+  "scripts" : {
+      "preinstall" : "node-gyp configure && node-gyp build",
+      "preuninstall" : "rm -rf build/*"
+  },
+  "main" : "build/Release/promethium.node",
   "homepage": "https://github.com/FabianTerhorst/Promethium#readme"
 }
