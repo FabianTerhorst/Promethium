@@ -7,7 +7,7 @@ BOOL EnableDebugPrivileges()
     HANDLE token;
     LUID sedebugnameValue;
     TOKEN_PRIVILEGES privileges;
- 
+
     if (OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &token))
     {
         if (LookupPrivilegeValue(NULL, SE_DEBUG_NAME, &sedebugnameValue))
@@ -92,7 +92,7 @@ void Process::Read(const FunctionCallbackInfo<Value>& args)
     Isolate* isolate = Isolate::GetCurrent();
     HandleScope scope(isolate);
 
-    if (args.Length() < 2)
+    /*if (args.Length() < 2)
     {
         isolate->ThrowException(Exception::TypeError(
             String::NewFromUtf8(isolate, "Wrong number of arguments")));
@@ -104,7 +104,7 @@ void Process::Read(const FunctionCallbackInfo<Value>& args)
         isolate->ThrowException(Exception::TypeError(
             String::NewFromUtf8(isolate, "Wrong arguments")));
         return;
-    }
+    }*/
 
     DWORD_PTR address = args[0]->ToNumber()->Value();
     SIZE_T size = (SIZE_T)(args[1]->ToNumber()->Value() < 4 ? args[1]->ToNumber()->Value() : 4);

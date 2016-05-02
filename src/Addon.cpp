@@ -10,8 +10,8 @@ void GetProcessByName(const FunctionCallbackInfo<Value>& args)
 {
     Isolate* isolate = Isolate::GetCurrent();
     HandleScope scope(isolate);
- 
-    if (args.Length() < 1)
+
+    /*if (args.Length() < 1)
     {
         isolate->ThrowException(Exception::TypeError(
             String::NewFromUtf8(isolate, "Wrong number of arguments")));
@@ -23,7 +23,7 @@ void GetProcessByName(const FunctionCallbackInfo<Value>& args)
         isolate->ThrowException(Exception::TypeError(
             String::NewFromUtf8(isolate, "Wrong arguments")));
         return;
-    }
+    }*/
 
     String::Utf8Value procName(args[0]->ToString());
 
