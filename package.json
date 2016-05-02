@@ -1,6 +1,6 @@
 {
   "name": "promethium",
-  "version": "1.0.5",
+  "version": "1.0.11",
   "description": "",
   "main": "./build/Release/promethium",
   "repository": {
@@ -11,6 +11,11 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FabianTerhorst/Promethium/issues"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "nan": "^2.3.2"
   },
   "scripts" : {
       "preinstall" : "node-gyp configure && node-gyp build",
